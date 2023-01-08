@@ -8,7 +8,7 @@ volumes:
 
 services:
 
-  admin:
+  gui:
     image: dpage/pgadmin4:${GUI_TAG:-6.15}
     restart: unless-stopped
     ports:
@@ -29,7 +29,6 @@ services:
       POSTGRES_USER: ${DB_USER:-dbuser}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-dbpassword}
     volumes:
-      - ./sql:/docker-entrypoint-initdb.d
       - dbstorage:/var/lib/postgresql/data
       
 
