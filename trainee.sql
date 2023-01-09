@@ -13,3 +13,4 @@ INSERT INTO trainee (id, birth_date, email, first_name, last_name, phone_number,
 INSERT INTO trainee (id, birth_date, email, first_name, last_name, phone_number, poe_id) VALUES (11,'1920-07-01','new@guymail.com','New','Guy','+33633589112',3);
 INSERT INTO trainee (id, birth_date, email, first_name, last_name, phone_number, poe_id) VALUES (12,'1902-06-14','fvlgkhjdj@vgldjvnclfdi2','Nours','Bisou','+33624229112',NULL);
 INSERT INTO trainee (id, birth_date, email, first_name, last_name, phone_number, poe_id) VALUES (13,'1950-06-14','dfdgfhjdj@vgldgfgnclfdi2','Nours','Bisou','+33444229112',NULL);
+Select setval('trainee_id_seq', max(id)) from trainee;
