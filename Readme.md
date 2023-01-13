@@ -1,24 +1,29 @@
 # Docker database with GUI
 
-## Commands to run
+## Most important commands
 
-Up the container for prod
+### Run the **prod container** with good name:
 
 ```cmd
 docker-compose -p dbpoe-pg-app --env-file .env up -d
 ```
 
-Insert data in poe
+### **Remove all** except the GUI volume (DB volume + datas folder)
+
 
 ```cmd
-Get-Content poe.sql | docker compose -p dbpoe-pg-app exec -T db psql -U poe dbpoe
+.\stop-remove-all-except-gui-vol.bat
 ```
 
-Then insert data in trainee
+### Insert all datas (if the container has just been up, **run the back API project at least one time to build the tables**)
+
+(**PowerShell** script)
 
 ```cmd
-Get-Content trainee.sql | docker compose -p dbpoe-pg-app exec -T db psql -U poe dbpoe
+.\insert-data.ps1
 ```
+
+-------------------------
 
 ## Customize Composition
 
